@@ -12,6 +12,7 @@ const setupInput = function (conn) {
 
 const handleUserInput = function (stdin) {
   stdin.on('data', key => {
+    console.log(key);
     if (key === '\u0003') {
       process.exit();
     }
@@ -27,11 +28,7 @@ const handleUserInput = function (stdin) {
     if (key === 'a') {
       connection.write('Move: left');
     }
-    if (key === '1') {
-      connection.write('Say: sup');
-    }
   })
 }
-
 
 module.exports = { setupInput }
