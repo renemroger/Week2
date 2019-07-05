@@ -4,10 +4,6 @@ const domainAndIndex = process.argv.slice(2);
 
 const domain = domainAndIndex[0];
 const file = domainAndIndex[1];
-let globalBody = '';
-
-
-console.log(domain, file)
 
 request(domain, (error, response, body) => {
   var stream = fs.createWriteStream(file);
